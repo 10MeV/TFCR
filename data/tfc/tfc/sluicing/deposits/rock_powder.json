@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": {
+    "item": "tfcorewashing:rock_powder"
+  },
+  "loot_table": "tfc:sluicing/deposits/rock_powder"
+}

@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": [
+    {
+      "item": "tfcorewashing:briquet_copper"
+    },
+    {
+      "item": "tfcorewashing:briquet_tetrahedrite"
+    },
+    {
+      "item": "tfcorewashing:briquet_malachite"
+    }
+],
+  "result_fluid": {
+    "fluid": "tfc:metal/copper",
+    "amount": 25
+  },
+  "temperature": 1050
+}

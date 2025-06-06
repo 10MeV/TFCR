@@ -1,0 +1,20 @@
+ServerEvents.recipes(e => {
+    //鞭尸仓鼠:所有的锭全写成了balm:ingots，导致物品可以拿未知合金、蓝钢、锻铁等合成
+    //输入铁锭改为锻铁
+    e.replaceInput({mod:"littlelogistics"},'minecraft:iron_ingot','tfc:metal/ingot/wrought_iron')
+    //继续鞭尸，无线组件不放红石
+    //替换台阶为标签,末影换成红蓝钢，萤石换红石
+    e.replaceInput({mod:"littlelogistics"},'minecraft:glowstone_dust','minecraft:redstone')
+    e.replaceInput({mod:"littlelogistics"},'minecraft:stone_slab','#forge:smooth_stone_slab')
+    e.replaceInput({id:'littlelogistics:receiver_component'},'minecraft:ender_eye','tfc:metal/ingot/red_steel')
+    e.replaceInput({mod:"littlelogistics"},'minecraft:ender_pearl','tfc:metal/ingot/blue_steel')
+    //船相关修复，将箱子、木桶换成TFC版本，熔炉换成蒸汽机
+    e.replaceInput({mod:"littlelogistics"},'minecraft:chest','#forge:chests')
+    e.replaceInput({mod:"littlelogistics"},'minecraft:barrel','#tfcbarrels:barrels')
+    e.replaceInput({mod:"littlelogistics"},'minecraft:furnace','create:steam_engine')
+    //ban捕鱼、运输(会刷物品)和物品搜集(还是区块加载？)船
+    e.remove({id:'littlelogistics:fishing_barge'})
+    e.remove({id:'littlelogistics:barge'})
+    e.remove({id:'littlelogistics:barrel_barge'})
+    e.remove({id:'littlelogistics:vacuum_barge'})
+})

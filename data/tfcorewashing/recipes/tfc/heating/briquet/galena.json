@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": [
+    {
+      "item": "tfcorewashing:briquet_galena"
+    }
+],
+  "result_fluid": {
+    "fluid": "tfc_ie_addon:metal/lead",
+    "amount": 25
+  },
+  "temperature": 500
+}

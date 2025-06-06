@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": [
+    {
+      "item": "tfcorewashing:briquet_hematite"
+    },
+    {
+      "item": "tfcorewashing:briquet_limonite"
+    },
+    {
+      "item": "tfcorewashing:briquet_magnetite"
+    }
+],
+  "result_fluid": {
+    "fluid": "tfc:metal/cast_iron",
+    "amount": 25
+  },
+  "temperature": 1535
+}

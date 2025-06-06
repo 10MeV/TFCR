@@ -1,0 +1,168 @@
+//颜色
+var color=["","white_stained_","light_grey_stained_",'grey_stained_',"black_stained_","brown_stained_","red_stained_","orange_stained_","yellow_stained_",
+    "lime_stained_","green_stained_","cyan_stained_","light_blue_stained_","blue_stained_","purple_stained_","magenta_stained_","pink_stained_"]
+//电弧炉配方
+ServerEvents.recipes(e => {
+//锻铁加木炭变生铁
+e.custom({
+    "type":"immersiveengineering:arc_furnace",
+    "additives":[{"tag":"forge:charcoal"}],
+    "energy":102400,
+    "input":{"tag":"forge:ingots/wrought_iron"},
+    "results":[{"tag":"forge:ingots/pig_iron"}],
+    "slag":{"tag":"forge:slag"},
+    "time":400
+})
+//铸铁直接变锻铁，不需要炭
+e.remove({id:"tfc_ie_addon:arc_furnace/wrought_iron"})
+e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results": [{"item": "tfc:metal/ingot/wrought_iron"}],
+    "additives": [],
+    "input": {"tag": "forge:ingots/cast_iron"},
+    "time": 400,
+    "energy": 204800
+  })
+e.custom({
+    "type":"immersiveengineering:arc_furnace",
+    "additives":[{"tag":"forge:charcoal"}],
+    "energy":102400,
+    "input":{"tag":"forge:ingots/wrought_iron"},
+    "results":[{"tag":"forge:ingots/pig_iron"}],
+    "slag":{"tag":"forge:slag"},
+    "time":400
+})
+function arc(input,additives,results,energy,time)
+{e.custom({
+    "type":"immersiveengineering:arc_furnace",
+    "additives":additives,
+    "energy":energy,
+    "input":input,
+    "results":results,
+    "time":time
+})}
+//玻璃
+arc({"item":"tfc:silica_glass_batch"},[{"item":"tfc:silica_glass_batch"}],[{"count":2,"item":"minecraft:glass"}],51200,100)
+//遮光玻璃
+arc({"tag":"tfc:glass_batches_not_tier_1"},[{"item":"tfc:powder/amethyst"}],
+    [{"item":"minecraft:tinted_glass"}],51200,100)
+//白色玻璃
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc:powder/soda_ash"}],
+    [{"item":"minecraft:white_stained_glass"}],51200,100)
+//淡灰色玻璃
+arc({"tag":"tfc:glass_batches"},[{"count":2,"base_ingredient": {"item":"tfc:powder/soda_ash"}},{"item":"tfc:powder/graphite"}],
+    [{"item":"minecraft:light_gray_stained_glass"}],51200,100)
+//灰色玻璃
+arc({"tag":"tfc:glass_batches"},[{"item":"tfc:powder/soda_ash"},{"item":"tfc:powder/graphite"}],
+    [{"item":"minecraft:gray_stained_glass"}],51200,100)
+//黑色玻璃
+arc({"tag":"tfc:glass_batches"},[{"item":"tfc:powder/graphite"}],
+    [{"item":"minecraft:black_stained_glass"}],51200,100)
+//棕色玻璃
+arc({"tag":"tfc:glass_batches"},[{"item":"tfc:powder/garnierite"}],
+    [{"item":"minecraft:brown_stained_glass"}],51200,100)
+//红色玻璃
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc:powder/cassiterite"}],
+    [{"item":"minecraft:red_stained_glass"}],51200,100)
+//橙色玻璃
+arc({"item":"tfc:silica_glass_batch"},[{"item":"tfc:powder/pyrite"}],
+    [{"item":"minecraft:orange_stained_glass"}],51200,100)//添加黄铁矿粉
+arc({"item":"tfc:hematitic_glass_batch"},[{"item":"tfc:hematitic_glass_batch"}],
+    [{"count":2,"item":"minecraft:orange_stained_glass"}],51200,100)
+//黄色玻璃
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc_ie_addon:powder/galena"}],
+    [{"item":"minecraft:yellow_stained_glass"}],51200,100)//添加方铅矿粉
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc:powder/native_silver"}],
+    [{"item":"minecraft:yellow_stained_glass"}],51200,100)//添加原生银粉   
+//黄绿色玻璃
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc:powder/soda_ash"},{"tag":'tfc:glassdusts/iron'}],
+    [{"item":"minecraft:lime_stained_glass"}],51200,100)//添加铁和苏打粉
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc_ie_addon:powder/uraninite"}],
+    [{"item":"minecraft:lime_stained_glass"}],51200,100)//添加铀粉
+//绿色玻璃
+arc({"item":"tfc:olivine_glass_batch"},[{"item":"tfc:olivine_glass_batch"}],
+    [{"count":2,"item":"minecraft:green_stained_glass"}],51200,100)
+arc({"tag":"tfc:glass_batches_tier_2"},[{"tag":"tfc:glassdusts/iron"}],
+    [{"item":"minecraft:green_stained_glass"}],51200,100)//添加铁粉
+//青色玻璃
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc:powder/sapphire"},{"tag":'tfc:glassdusts/copper'}],
+    [{"item":"minecraft:cyan_stained_glass"}],51200,100)//添加铜和蓝宝石粉
+//淡蓝色
+arc({"item":"tfc:silica_glass_batch"},[{"item":"tfc:powder/lapis_lazuli"}],
+    [{"item":"minecraft:light_blue_stained_glass"}],51200,100)//添加蓝宝石粉
+//蓝色
+arc({"item":"tfc:silica_glass_batch"},[{"tag":'tfc:glassdusts/copper'}],
+    [{"item":"minecraft:blue_stained_glass"}],51200,100)//添加铜粉
+arc({"item":"tfc:volcanic_glass_batch"},[{"item":"tfc:volcanic_glass_batch"}],
+    [{"count":2,"item":"minecraft:blue_stained_glass"}],51200,100)
+//紫色
+arc({"tag":"tfc:glass_batches"},[{"tag":"tfc:glassdusts/iron"},{"tag":"tfc:glassdusts/copper"}],
+    [{"item":"minecraft:purple_stained_glass"}],51200,100)//添加铁和铜粉
+//品红色
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":"tfc:powder/ruby"}],
+    [{"item":"minecraft:magenta_stained_glass"}],51200,100)//添加红宝石粉
+//粉色
+arc({"item":"tfc:silica_glass_batch"},[{"item":"tfc:powder/native_gold"}],
+    [{"item":"minecraft:pink_stained_glass"}],51200,100)//添加原生金粉
+//彩色玻璃板
+for(let i in color){
+    e.custom({
+        "type":"immersiveengineering:arc_furnace",
+        "additives":[{"item":'immersiveengineering:mold_plate'}],
+        "energy":12800,
+        "input":{"item":"minecraft:"+color[i]+"glass"},
+        "results":[{"item":"minecraft:"+color[i]+"glass_pane","count":2}],
+        "slag":{"item":'immersiveengineering:mold_plate'},
+        "time":100})}
+//玻璃瓶
+arc({"item":"tfc:volcanic_glass_batch"},[{"item":"tfc:volcanic_glass_bottle"}],
+    [{"item":"tfc:volcanic_glass_bottle","count":2}],51200,100)//火山岩
+arc({"item":"tfc:silica_glass_batch"},[{"item":"tfc:silica_glass_bottle"}],
+    [{"item":"tfc:silica_glass_bottle","count":2}],51200,100)//二氧化硅
+arc({"item":"tfc:hematitic_glass_batch"},[{"item":"tfc:hematitic_glass_bottle"}],
+    [{"item":"tfc:hematitic_glass_bottle","count":2}],51200,100)//赤铁矿
+arc({"item":"tfc:olivine_glass_batch"},[{"item":"tfc:olivine_glass_bottle"}],
+    [{"item":"tfc:olivine_glass_bottle","count":2}],51200,100)//橄榄岩
+//firmalife葡萄酒瓶
+arc({"item":"tfc:volcanic_glass_batch","count":2},[{"item":"firmalife:empty_volcanic_wine_bottle"}],
+    [{"item":"firmalife:empty_volcanic_wine_bottle","count":2}],51200,100)//火山岩
+arc({"item":"tfc:hematitic_glass_batch","count":2},[{"item":"firmalife:empty_hematitic_wine_bottle"}],
+    [{"item":"firmalife:empty_hematitic_wine_bottle","count":2}],51200,100)//赤铁矿
+arc({"item":"tfc:olivine_glass_batch","count":2},[{"item":"firmalife:empty_olivine_wine_bottle"}],
+    [{"item":"firmalife:empty_olivine_wine_bottle","count":2}],51200,100)//橄榄岩
+//葡园酒香酒瓶
+arc({"item":"tfc:olivine_glass_batch","count":2},[{"item":'vinery:wine_bottle'}],
+    [{"item":'vinery:wine_bottle',"count":2}],51200,100)
+//灯罩
+arc({"tag":"tfc:glass_batches"},[{"item":'tfc:lamp_glass'}],
+    [{"item":'tfc:lamp_glass',"count":2}],51200,100)
+//罐子
+arc({"tag":"tfc:glass_batches_tier_2"},[{"item":'butcher:jar'}],
+    [{"item":'butcher:jar',"count":2}],51200,100)
+e.remove({id:"butcher:jarrecipe"})
+//强化玻璃
+arc({"item":"tfc:silica_glass_batch"},[{"item":'firmalife:reinforced_glass'}],
+    [{"item":'firmalife:reinforced_glass',"count":2}],51200,100)
+//酒杯wine glass
+arc({"item":"tfc:silica_glass_batch"},[{"item":'firmalife:wine_glass'}],
+    [{"item":'firmalife:wine_glass',"count":3}],51200,100)
+//透镜
+arc({"item":"tfc:silica_glass_batch","count":2},[{"item":'tfc:lens'}],
+    [{"item":'tfc:lens',"count":2}],51200,100)
+//空罐子
+arc({"tag":"tfc:glass_batches_tier_2","count":2},[{"item":'tfc:empty_jar'}],
+    [{"item":'tfc:empty_jar',"count":2}],51200,100)
+//红砖
+arc({"item":'tfc:ceramic/unfired_brick'},[],
+    [{"item":'minecraft:brick'}],6400,50)
+e.custom({"type":"immersiveengineering:metal_press",
+    "energy": 3200,
+    "input":{"item":"minecraft:clay_ball"},
+    "mold":'tfc:ceramic/ingot_mold',
+    "result":{"base_ingredient":{"item":'tfc:ceramic/unfired_brick'}}})
+    e.custom({"type":"immersiveengineering:metal_press",
+        "energy":640,
+        "input":{"count": 5,"base_ingredient": {"item": "minecraft:clay_ball"}},
+        "mold":'tfc:ceramic/fire_ingot_mold',
+        "result":{"base_ingredient":{"item":'tfc:ceramic/unfired_brick'},"count": 5}})
+})

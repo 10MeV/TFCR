@@ -1,0 +1,13 @@
+{
+  "ingredient": [
+    {
+      "item": "tfcorewashing:pellet_silver"
+    },
+    {
+      "item": "tfcorewashing:briquet_silver"
+    }
+  ],
+  "heat_capacity": 1.2,
+  "forging_temperature": 577,
+  "welding_temperature": 769 
+}

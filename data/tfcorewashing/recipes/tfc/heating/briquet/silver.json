@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": [
+    {
+      "item": "tfcorewashing:briquet_silver"
+    }
+],
+  "result_fluid": {
+    "fluid": "tfc:metal/silver",
+    "amount": 25
+  },
+  "temperature": 961
+}
