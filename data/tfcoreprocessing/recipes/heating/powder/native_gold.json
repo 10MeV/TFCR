@@ -1,8 +1,0 @@
-{
-  "__comment__": "已删除delete",
-  "conditions": [
-    {
-      "type": "forge:false"
-    }
-  ]
-}
