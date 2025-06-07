@@ -18,5 +18,16 @@ ServerEvents.recipes(e => {
     e.recipes.create.compacting("tfcr:roasted_brick/bauxite","4x tfc_ie_addon:powder/bauxite").superheated()
     e.recipes.tfc.heating('tfcr:roasted_brick/bauxite', 1500).resultFluid(Fluid.of('tfc_ie_addon:metal/aluminum', 50))
 
+    //ban开局大煮
+        for(let i in ore){
+        e.remove({id:'tfcoreprocessing:barrel/slurry/slurry_'+ore[i]})
+        e.remove({id:'tfcoreprocessing:pot/slurry/roast_1_'+ore[i]})
+        e.remove({id:'tfcoreprocessing:pot/slurry/roast_2_'+ore[i]})
+        e.remove({id:'tfcoreprocessing:pot/slurry/roast_3_'+ore[i]})
+        e.remove({id:'tfcoreprocessing:pot/slurry/roast_4_'+ore[i]})
+        e.remove({id:'tfcoreprocessing:pot/slurry/roast_5_'+ore[i]})
+        e.remove({id:'tfcoreprocessing:pot/slurry/slurry_'+ore[i]})
+        }
+
 
 })
