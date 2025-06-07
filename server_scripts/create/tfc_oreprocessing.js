@@ -6,13 +6,19 @@ TFCEvents.data(event => {
 ServerEvents.recipes(e => {
     var ore=["bismuthinite","cassiterite","native_copper","garnierite","native_gold",
         "hematite","limonite","magnetite","malachite","native_silver","sphalerite","tetrahedrite"]
+    var ingot=["bismuthinite","cassiterite","copper","garnierite","gold",
+        "hematite","limonite","magnetite","malachite","native_silver","sphalerite","tetrahedrite"]
         for(let i in ore){
+        //矿团变浆液
+        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],800),[Fluid.water(800),"tfcorewashing:briquet_"+ore[i]])
+        //矿块变浆液
+        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],200),[Fluid.water(200),"tfcorewashing:pellet_"+ore[i]])
         //矿粉变浆液
-        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],250),[Fluid.water(250),"tfc:powder/"+ore[i]])
+        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],50),[Fluid.water(50),"tfc:powder/"+ore[i]])
         //浆液变精制矿粉
-        e.recipes.create.mixing("tfcoreprocessing:refined/"+ore[i],Fluid.of("tfcoreprocessing:slurry_"+ore[i],250)).heated()
+        e.recipes.create.mixing("tfcoreprocessing:refined/"+ore[i],Fluid.of("tfcoreprocessing:slurry_"+ore[i],50)).heated()
         //压缩粉烧结
-        e.recipes.create.compacting("tfcoreprocessing:roasted_brick/"+ore[i],["tfcoreprocessing:compressed/"+ore[i],Fluid.water(100)]).heated()
+        e.recipes.create.compacting("tfcoreprocessing:roasted_brick/"+ore[i],["tfcoreprocessing:compressed/"+ore[i],Fluid.water(200)]).heated()
         }
     //铝土矿补充
     e.recipes.create.compacting("tfcr:roasted_brick/bauxite","4x tfc_ie_addon:powder/bauxite").superheated()
@@ -29,5 +35,14 @@ ServerEvents.recipes(e => {
         e.remove({id:'tfcoreprocessing:pot/slurry/slurry_'+ore[i]})
         }
 
+    //电弧烧烧结矿砖
+     e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results": [{"item": "tfc:metal/ingot/copper"}],
+    "additives": [],
+    "input": {"count": 2,"base_ingredient":{"item":"tfcoreprocessing:roasted_brick/native_copper"}},
+    "time": 100,
+    "energy": 25600
+    })
 
 })
