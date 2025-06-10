@@ -30,4 +30,9 @@ StartupEvents.registry('item', event => {
 	.texture('kubejs:item/roasted_bauxite')
 	.displayName('烧结铝土矿粉')
 
+	//妙妙压缩饼干
+	//event.create('tfcr:super_hardtack')
+	//.texture('kubejs:item/super_hardtack')
+	//.displayName('格雷牌员工小食')
+
 })

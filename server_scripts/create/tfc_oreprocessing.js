@@ -35,12 +35,39 @@ ServerEvents.recipes(e => {
         e.remove({id:'tfcoreprocessing:pot/slurry/slurry_'+ore[i]})
         }
 
-    //电弧烧烧结矿砖
-     e.custom({
+    //电弧烧铅
+    e.custom({
     "type": "immersiveengineering:arc_furnace",
-    "results": [{"item": "tfc:metal/ingot/copper"}],
+    "results":[{"count": 2,"base_ingredient":{"item": "immersiveengineering:ingot_lead"}}],
     "additives": [],
-    "input": {"count": 2,"base_ingredient":{"item":"tfcoreprocessing:roasted_brick/native_copper"}},
+    "input": {"count": 3,"base_ingredient":{"item":"tfc_ie_addon:ore/rich_galena"}},
+    "time": 100,
+    "energy": 25600
+    })
+
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 2,"base_ingredient":{"item": "immersiveengineering:ingot_lead"}}],
+    "additives": [],
+    "input": {"count": 7,"base_ingredient":{"item":"tfc_ie_addon:ore/poor_galena"}},
+    "time": 100,
+    "energy": 25600
+    })
+
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 1,"base_ingredient":{"item": "immersiveengineering:ingot_lead"}}],
+    "additives": [],
+    "input": {"count": 2,"base_ingredient":{"item":"tfc_ie_addon:ore/normal_galena"}},
+    "time": 100,
+    "energy": 25600
+    })
+
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 1,"base_ingredient":{"item": "immersiveengineering:ingot_lead"}}],
+    "additives": [],
+    "input": {"count": 5,"base_ingredient":{"item":"tfc_ie_addon:ore/small_galena"}},
     "time": 100,
     "energy": 25600
     })

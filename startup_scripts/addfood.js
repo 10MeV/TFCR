@@ -1,0 +1,10 @@
+//群峦方便食品注册
+StartupEvents.registry("item",event=>{
+    event.create("tfcr:super_hardtack")
+         .texture('kubejs:item/super_hardtack')
+         .displayName('群峦牌员工能量棒')
+         .food(foodbuilder=>{
+             foodbuilder.effect("minecraft:speed",20*180,1,1)
+             foodbuilder.effect("regeneration",20*30,0,1)
+         })
+})
