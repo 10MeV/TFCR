@@ -30,14 +30,16 @@ ServerEvents.recipes(e => {
   e.replaceInput({id:'create:crafting/materials/sand_paper'},'minecraft:sand','#forge:sand')//砂纸
   //用TFC面团制作粘液球
   e.shapeless('minecraft:slime_ball',["#tfc:foods/dough","minecraft:lime_dye"])
+
+  //麦机动磨粉
+  e.recipes.create.milling(["tfc:food/barley_flour",Item.of("tfc:food/barley_flour").withChance(0.2)],"tfc:food/barley_grain")
+  e.recipes.create.milling(["tfc:food/oat_flour",Item.of("tfc:food/oat_flour").withChance(0.2)],"tfc:food/oat_grain")
+  e.recipes.create.milling(["tfc:food/rye_flour",Item.of("tfc:food/rye_flour").withChance(0.2)],"tfc:food/rye_grain")
+  e.recipes.create.milling(["tfc:food/wheat_flour",Item.of("tfc:food/wheat_flour").withChance(0.2)],"tfc:food/wheat_grain")
+
   //空烈焰人燃烧室
   e.recipes.tfc.anvil('create:empty_blaze_burner', 'tfc:metal/double_ingot/wrought_iron', ['hit_not_last', 'bend_any','bend_any']).tier(3)
-  //加热得燃烧室
-  e.custom({
-        "type": "tfc:heating",
-        "ingredient": {"item": 'create:empty_blaze_burner'},
-        "result_item": {"item": 'create:blaze_burner'},
-        "temperature": 1540})
+  
   //海带
   e.shaped("3x create:belt_connector",
     ['AAA',
@@ -59,9 +61,4 @@ ServerEvents.recipes(e => {
       {"chance": 0.25,"item": "minecraft:flint"},
       {"chance": 0.125,"item": 'tfc:ore/small_limonite'}]
   })
-})
-TFCEvents.data(event => {
-  //空烈焰人燃烧室
-  event.itemHeat('create:empty_blaze_burner', 0.7, null,null)
-  event.itemHeat('kubejs:rubber', 1, null,null)
 })

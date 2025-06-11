@@ -12,4 +12,9 @@ ServerEvents.tags('item', e => {
     e.add('tfc:glassdusts/copper','tfc:powder/malachite')
     e.add('tfc:glassdusts/copper','tfc:powder/native_copper')
     e.add('tfc:glassdusts/copper','tfc:powder/tetrahedrite')
+    //奶粉添加标签
+    e.add('tfcr:powdered_milk','artisanal:powdered_milk')
+    e.add('tfcr:powdered_milk','artisanal:powdered_goat_milk')
+    e.add('tfcr:powdered_milk','artisanal:powdered_yak_milk')
+
   })

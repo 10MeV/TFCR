@@ -25,14 +25,27 @@ StartupEvents.registry('item', event => {
 	event.create('tfcr:raw_kaolin_clay')
 	.texture('kubejs:item/raw_kaolin_clay')
 	.displayName('粗高岭土')
+	
 	//高岭土精制粉
 	event.create('tfcr:roasted/bauxite')
 	.texture('kubejs:item/roasted_bauxite')
 	.displayName('烧结铝土矿粉')
 
-	//妙妙压缩饼干
-	//event.create('tfcr:super_hardtack')
-	//.texture('kubejs:item/super_hardtack')
-	//.displayName('格雷牌员工小食')
+	//蓝钢罐头
+	event.create('tfcr:blue_steelcan1')
+	.texture('kubejs:item/blue_steelcan1')
+	.displayName('空的蓝钢罐头')
+
+	event.create('tfcr:blue_steelcan0')
+	.texture('kubejs:item/blue_steelcan0')
+	.displayName('群峦牌员工能量棒罐头')
+
+	event.create('tfcr:blue_steelcan2')
+	.texture('kubejs:item/blue_steelcan2')
+	.displayName('脏的蓝钢罐头')
+
+	event.create('tfcr:blue_steelcan3')
+	.texture('kubejs:item/blue_steelcan3')
+	.displayName('待杀菌的能量棒罐头')
 
 })
