@@ -39,6 +39,18 @@ ServerEvents.recipes(e => {
 
   //空烈焰人燃烧室
   e.recipes.tfc.anvil('create:empty_blaze_burner', 'tfc:metal/double_ingot/wrought_iron', ['hit_not_last', 'bend_any','bend_any']).tier(3)
+
+  //蓝钢罐头制造
+  e.recipes.create.compacting('2x tfcr:blue_steelcan1','tfc:metal/sheet/blue_steel').superheated()
+
+  //奶粉机动适配
+  e.recipes.create.mixing("artisanal:milk_flakes",Fluid.of("minecraft:milk",200)).heated()
+  e.recipes.create.milling("2x artisanal:powdered_milk","artisanal:milk_flakes")
+  e.recipes.create.mixing("artisanal:goat_milk_flakes",Fluid.of("firmalife:goat_milk",200)).heated()
+  e.recipes.create.milling("2x artisanal:powdered_goat_milk","artisanal:goat_milk_flakes")
+  e.recipes.create.mixing("artisanal:yak_milk_flakes",Fluid.of("firmalife:yak_milk",200)).heated()
+  e.recipes.create.milling("2x artisanal:powdered_yak_milk","artisanal:yak_milk_flakes")
+
   
   //海带
   e.shaped("3x create:belt_connector",
