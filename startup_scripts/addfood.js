@@ -10,13 +10,13 @@ StartupEvents.registry("item",event=>{
 
     event.create("tfcr:powdered_meat")
          .texture('kubejs:item/powdered_meat')
-         .displayName('肉沫')
+         .displayName('不易腐肉泥')
 
     event.create("tfcr:powdered_vegetable")
          .texture('kubejs:item/powdered_vegetable')
-         .displayName('蔬菜沫')
+         .displayName('不易腐蔬菜沫')
 
     event.create("tfcr:powdered_fruit")
          .texture('kubejs:item/powdered_fruit')
-         .displayName('果泥')
+         .displayName('不易腐果泥')
 })

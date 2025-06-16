@@ -32,10 +32,10 @@ ServerEvents.recipes(e => {
   e.shapeless('minecraft:slime_ball',["#tfc:foods/dough","minecraft:lime_dye"])
 
   //麦机动磨粉
-  e.recipes.create.milling(["tfc:food/barley_flour",Item.of("tfc:food/barley_flour").withChance(0.2)],"tfc:food/barley_grain")
-  e.recipes.create.milling(["tfc:food/oat_flour",Item.of("tfc:food/oat_flour").withChance(0.2)],"tfc:food/oat_grain")
-  e.recipes.create.milling(["tfc:food/rye_flour",Item.of("tfc:food/rye_flour").withChance(0.2)],"tfc:food/rye_grain")
-  e.recipes.create.milling(["tfc:food/wheat_flour",Item.of("tfc:food/wheat_flour").withChance(0.2)],"tfc:food/wheat_grain")
+  e.recipes.create.milling(["tfc:food/barley_flour",Item.of("tfc:food/barley_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/barley_grain"}})
+  e.recipes.create.milling(["tfc:food/oat_flour",Item.of("tfc:food/oat_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/oat_grain"}})
+  e.recipes.create.milling(["tfc:food/rye_flour",Item.of("tfc:food/rye_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rye_grain"}})
+  e.recipes.create.milling(["tfc:food/wheat_flour",Item.of("tfc:food/wheat_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/wheat_grain"}})
 
   //空烈焰人燃烧室
   e.recipes.tfc.anvil('create:empty_blaze_burner', 'tfc:metal/double_ingot/wrought_iron', ['hit_not_last', 'bend_any','bend_any']).tier(3)

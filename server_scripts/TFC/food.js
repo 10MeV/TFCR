@@ -11,19 +11,6 @@ TFCEvents.data(event => {
         food.dairy(1)
         food.decayModifier(1.5)
     })
-
-    event.foodItem('tfcr:powdered_vegetable', food => {
-        food.hunger(1)
-        food.decayModifier(3)
-    })
-    event.foodItem('tfcr:powdered_meat', food => {
-        food.hunger(1)
-        food.decayModifier(3)
-    })
-    event.foodItem('tfcr:powdered_fruit', food => {
-        food.hunger(1)
-        food.decayModifier(3)
-    })
 })
 
 
@@ -32,14 +19,14 @@ ServerEvents.recipes(e => {
             e.recipes.create.sequenced_assembly(
 		["tfcr:blue_steelcan3"],"tfcr:blue_steelcan1",
        [
-        e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "#firmalife:foods/extra_dough"]),
+        e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", {"type": "tfc:not_rotten","ingredient": {"tag": "firmalife:foods/extra_dough"}}]),
         e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "tfcr:powdered_meat"]),
         e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "tfcr:powdered_meat"]),
         e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "tfc:powder/salt"]),
         e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "tfcr:powdered_vegetable"]),
         e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "tfcr:powdered_fruit"]),
         e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "#tfcr:powdered_milk"]),
-        e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", "#firmalife:foods/extra_dough"]),
+        e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", {"type": "tfc:not_rotten","ingredient": {"tag": "firmalife:foods/extra_dough"}}]),
         e.recipes.createDeploying("tfcr:blue_steelcan1", ["tfcr:blue_steelcan1", 'tfc:metal/hammer/red_steel']).keepHeldItem()
        ]).transitionalItem("tfcr:blue_steelcan1").loops(4)
     //未杀菌的蓝钢罐头处理
@@ -47,11 +34,25 @@ ServerEvents.recipes(e => {
     //脏蓝钢罐子洗涤
     e.recipes.create.mixing("tfcr:blue_steelcan1",[Fluid.of("artisanal:soapy_water",100),"tfcr:blue_steelcan2"])
     //三种沫儿的合成
-    e.recipes.createDeploying("tfcr:powdered_meat", ["#tfc:foods/raw_meats", 'tfc:metal/hammer/red_steel']).keepHeldItem()
-    e.recipes.createDeploying("tfcr:powdered_fruit", ["#tfc:foods/fruits", 'tfc:metal/hammer/red_steel']).keepHeldItem()
-    e.recipes.createDeploying("tfcr:powdered_vegetable", ["#tfc:foods/vegetables", 'tfc:metal/hammer/red_steel']).keepHeldItem()
-})
+    e.custom({
+    "type": "farmersdelight:cooking",
+    "recipe_book_tab": "misc",
+    "ingredients": [{"tag": "tfc:sweetener"},{"type": "tfc:not_rotten","ingredient": {"tag": "tfc:foods/fruits"}}],
+    "result": {"item": "tfcr:powdered_fruit","modifiers": ["tfc:copy_food"]},"experience": 0.35,"cookingtime": 100})
 
+    e.custom({
+    "type": "farmersdelight:cooking",
+    "recipe_book_tab": "misc",
+    "ingredients": [{"tag": "tfc:sweetener"},{"type": "tfc:not_rotten","ingredient": {"tag": "tfc:foods/vegetables"}}],
+    "result": {"item": "tfcr:powdered_vegetable","modifiers": ["tfc:copy_food"]},"experience": 0.35,"cookingtime": 100})
+
+    e.custom({
+    "type": "farmersdelight:cooking",
+    "recipe_book_tab": "misc",
+    "ingredients": [{"tag": "forge:dusts/salt"},{"type": "tfc:not_rotten","ingredient": {"tag": "tfc:foods/raw_meats"}}],
+    "result": {"item": "tfcr:powdered_meat","modifiers": ["tfc:copy_food"]},"experience": 0.35,"cookingtime": 100})
+
+})
 //能量棒罐头开出能量棒
 ItemEvents.rightClicked('tfcr:blue_steelcan0', event => {
     let { player } = event;   
