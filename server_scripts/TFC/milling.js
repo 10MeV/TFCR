@@ -26,4 +26,19 @@ ServerEvents.recipes(e=> {
     create.milling('4x tfc:powder/sapphire','tfc:ore/sapphire')
     create.milling('4x tfc:powder/amethyst','tfc:gem/amethyst')
     create.milling('4x tfc:powder/amethyst','tfc:ore/amethyst')
+
+    //群峦动力提前
+    e.shaped(Item.of("tfcr:wooden_cogwheel",4), [
+            'QLQ',
+            'LML',
+            'QLQ'
+        ],
+        {
+            L: "#forge:rods/wooden",
+            Q: "#minecraft:planks",
+            M: "tfc:glue"
+        })
+    e.replaceInput({output:"#tfc:gear_boxes"},"#tfc:brass_mechanisms","tfcr:wooden_cogwheel")
+    e.replaceInput({output:"#tfc:clutches"},["#tfc:brass_mechanisms","#forge:dusts/redstone"],"tfcr:wooden_cogwheel")
+    
 })

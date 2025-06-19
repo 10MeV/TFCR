@@ -48,4 +48,10 @@ StartupEvents.registry('item', event => {
 	.texture('kubejs:item/blue_steelcan3')
 	.displayName('待杀菌的能量棒罐头')
 
+	//木齿轮
+	event.create('tfcr:wooden_cogwheel')
+	.texture('kubejs:item/wooden_cogwheel')
+	.displayName('木制齿轮')
+
+
 })
