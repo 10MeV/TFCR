@@ -16,5 +16,7 @@ ServerEvents.tags('item', e => {
     e.add('tfcr:powdered_milk','artisanal:powdered_milk')
     e.add('tfcr:powdered_milk','artisanal:powdered_goat_milk')
     e.add('tfcr:powdered_milk','artisanal:powdered_yak_milk')
+    //造纸添加标签
+    e.add('create:pulpifiable','immersiveengineering:dust_wood')
 
   })

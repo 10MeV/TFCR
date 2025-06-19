@@ -21,6 +21,12 @@ ServerEvents.recipes(e => {
 
   //胶水制作
   e.recipes.create.mixing('tfc:glue',[Fluid.of('tfc:limewater',500),'minecraft:bone_meal']).heated()
+  //砂浆制作
+  e.recipes.create.mixing('64x tfc:mortar',[Fluid.of('tfc:limewater',400),'4x #forge:sand'])
+  //石灰水
+  e.recipes.create.mixing([Fluid.of('tfc:limewater',500)],[Fluid.water(500),"tfc:powder/lime"])
+  //生石灰烤制
+  e.recipes.create.mixing('4x tfc:powder/lime','4x tfc:powder/flux').heated()
 
   //禁止刷皮革
   e.remove([{id:'create:milling/saddle'},{id:'create:crushing/leather_horse_armor'},{id:"farmersdelight:cutting/leather_horse_armor"}])
@@ -40,6 +46,13 @@ ServerEvents.recipes(e => {
   e.recipes.create.milling(["tfc:food/rice_flour",Item.of("tfc:food/rice_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rice_grain"}})
   e.recipes.create.milling(["firmalife:food/masa_flour",Item.of("firmalife:food/masa_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "firmalife:food/nixtamal"}})
 
+  //造纸
+   e.recipes.create.sequenced_assembly(
+		['2x minecraft:paper'],'create:cardboard',
+       [
+        e.recipes.createDeploying('create:cardboard', ['create:cardboard','minecraft:white_dye']),
+        e.recipes.create.pressing('create:cardboard','create:cardboard'),
+       ]).transitionalItem('create:cardboard').loops(1)
 
   //空烈焰人燃烧室
   e.recipes.tfc.anvil('create:empty_blaze_burner', 'tfc:metal/double_ingot/wrought_iron', ['hit_not_last', 'bend_any','bend_any']).tier(3)
