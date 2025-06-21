@@ -72,4 +72,34 @@ ServerEvents.recipes(e => {
     "energy": 25600
     })
 
+
+    //电弧自动黑红蓝钢
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/black_steel"}}],
+    "additives": [{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/pig_iron"}}],
+    "input": {"count": 1,"base_ingredient":{"item": "tfc:metal/ingot/weak_steel"}},
+    "time": 100,
+    "energy": 25600
+    })
+
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/blue_steel"}}],
+    "additives": [{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/black_steel"}}],
+    "input":{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/weak_blue_steel"}},
+    "time": 100,
+    "energy": 25600
+    })
+
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/red_steel"}}],
+    "additives": [{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/black_steel"}}],
+    "input":{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/weak_red_steel"}},
+    "time": 100,
+    "energy": 25600
+    })
+
+
 })

@@ -53,5 +53,14 @@ StartupEvents.registry('item', event => {
 	.texture('kubejs:item/wooden_cogwheel')
 	.displayName('木制齿轮')
 
+	//信息时代奖励袋
+	event.create('tfcr:information_age')
+	.texture('kubejs:item/information_age')
+	.displayName('信息时代奖励袋')
+
+	//种子奖励袋
+    event.create('tfcr:seed')
+	.texture('kubejs:item/seed')
+	.displayName('种子奖励袋')
 
 })
