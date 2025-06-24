@@ -36,6 +36,8 @@ ServerEvents.recipes(e => {
   e.replaceInput({id:'create:crafting/materials/sand_paper'},'minecraft:sand','#forge:sand')//砂纸
   //用TFC面团制作粘液球
   e.shapeless('minecraft:slime_ball',["#tfc:foods/dough","minecraft:lime_dye"])
+  //粘液矿磨碎
+  e.recipes.create.milling('minecraft:slime_ball','beneath:raw_slime')
 
   //麦机动磨粉
   e.recipes.create.milling(["tfc:food/barley_flour",Item.of("tfc:food/barley_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/barley_grain"}})
@@ -45,6 +47,9 @@ ServerEvents.recipes(e => {
   e.recipes.create.milling(["tfc:food/maize_flour",Item.of("tfc:food/maize_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/maize_grain"}})
   e.recipes.create.milling(["tfc:food/rice_flour",Item.of("tfc:food/rice_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rice_grain"}})
   e.recipes.create.milling(["firmalife:food/masa_flour",Item.of("firmalife:food/masa_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "firmalife:food/nixtamal"}})
+
+  //砂纸
+  e.shapeless('create:sand_paper',['tfc:wool_cloth','#forge:sand'])
 
   //造纸
    e.recipes.create.sequenced_assembly(
@@ -87,6 +92,17 @@ ServerEvents.recipes(e => {
   //蒸汽机、保险库原版木桶换储物木桶
   e.replaceInput({id:"create:crafting/kinetics/item_vault"},'minecraft:barrel','#tfc:barrels')
   e.replaceInput({id:"create:crafting/kinetics/fluid_tank"},'minecraft:barrel','#tfc:barrels')
+  //制作原版箱子
+  e.shaped(Item.of("minecraft:chest",7), [
+            'QLQ',
+            'QQQ',
+            'QLQ'
+        ],
+        {
+            L: 'create:iron_sheet',
+            Q: "#forge:chests",
+        })
+
   //洗沙砾出铁矿而不是粒
   e.remove({id:"create:splashing/gravel"})
   e.custom({

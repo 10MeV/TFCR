@@ -10,9 +10,9 @@ ServerEvents.recipes(e => {
         "hematite","limonite","magnetite","malachite","native_silver","sphalerite","tetrahedrite"]
         for(let i in ore){
         //矿团变浆液
-        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],800),[Fluid.water(800),"tfcorewashing:briquet_"+ore[i]])
+        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],800),[Fluid.water(800),"tfcorewashing:briquet_"+ore[i]])        
         //矿块变浆液
-        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],200),[Fluid.water(200),"tfcorewashing:pellet_"+ore[i]])
+        e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],200),[Fluid.water(200),"tfcorewashing:pellet_"+ore[i]])  
         //矿粉变浆液
         e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_"+ore[i],50),[Fluid.water(50),"tfc:powder/"+ore[i]])
         //浆液变精制矿粉
@@ -23,6 +23,14 @@ ServerEvents.recipes(e => {
     //铝土矿补充
     e.recipes.create.compacting("tfcr:roasted_brick/bauxite","4x tfc_ie_addon:powder/bauxite").superheated()
     e.recipes.tfc.heating('tfcr:roasted_brick/bauxite', 1500).resultFluid(Fluid.of('tfc_ie_addon:metal/aluminum', 50))
+    //铜银金补充
+    e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_native_copper",800),[Fluid.water(800),"tfcorewashing:briquet_copper"])
+    e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_native_silver",800),[Fluid.water(800),"tfcorewashing:briquet_silver"])
+    e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_native_gold",800),[Fluid.water(800),"tfcorewashing:briquet_gold"])
+
+    e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_native_copper",200),[Fluid.water(200),"tfcorewashing:pellet_copper"])
+    e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_native_silver",200),[Fluid.water(200),"tfcorewashing:pellet_silver"])
+    e.recipes.create.mixing(Fluid.of("tfcoreprocessing:slurry_native_gold",200),[Fluid.water(200),"tfcorewashing:pellet_gold"])
 
     //ban开局大煮
         for(let i in ore){

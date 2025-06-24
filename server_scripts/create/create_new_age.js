@@ -52,4 +52,6 @@ ServerEvents.recipes(e => {
           "item": "create_new_age:carbon_brushes"},
         "show_notification": true
     })
+    //移除接线柱配方
+    e.remove({output:'create_new_age:electrical_connector'})
 })
