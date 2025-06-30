@@ -41,8 +41,9 @@ ServerEvents.recipes(e => {
         e.remove({id:'tfcoreprocessing:pot/slurry/roast_4_'+ore[i]})
         e.remove({id:'tfcoreprocessing:pot/slurry/roast_5_'+ore[i]})
         e.remove({id:'tfcoreprocessing:pot/slurry/slurry_'+ore[i]})
+        //ban孔雀石，锌，黝铜出6mb液体
+        e.remove({id:'tfcoreprocessing:heating/powder/'+ore[i]})
         }
-
     //电弧烧铅
     e.custom({
     "type": "immersiveengineering:arc_furnace",

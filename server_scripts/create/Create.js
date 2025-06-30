@@ -78,7 +78,8 @@ ServerEvents.recipes(e => {
         "type": "tfc:heating",
         "ingredient": {"item": 'create:empty_blaze_burner'},
         "result_item": {"item": 'create:blaze_burner'},
-        "temperature": 1540})
+        "temperature": 1540
+      })
 
   //海带
   e.shaped("3x create:belt_connector",
