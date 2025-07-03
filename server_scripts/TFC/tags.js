@@ -18,5 +18,10 @@ ServerEvents.tags('item', e => {
     e.add('tfcr:powdered_milk','artisanal:powdered_yak_milk')
     //造纸添加标签
     e.add('create:pulpifiable','immersiveengineering:dust_wood')
+    //添加海带tag
+    e.add('tfc:plants/kelp','tfc:plant/leafy_kelp')
+    e.add('tfc:plants/kelp','tfc:plant/winged_kelp')
+    //添加岩浆块tag
+    e.add('forge:magma_block','tfc_coldsweat:rock/magma/basalt')
 
   })

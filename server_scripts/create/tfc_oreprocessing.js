@@ -110,5 +110,15 @@ ServerEvents.recipes(e => {
     "energy": 25600
     })
 
+    //电弧烧原版玻璃瓶
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 3,"base_ingredient":{"item":"minecraft:glass_bottle"}}],
+    "additives": [],
+    "input":{"count": 3,"base_ingredient":{"item":"minecraft:glass"}},
+    "time": 100,
+    "energy": 12800
+    })
+
 
 })

@@ -15,6 +15,7 @@ ServerEvents.recipes(e => {
   e.recipes.create.milling('4x tfc:powder/charcoal',"#forge:charcoal")
   e.recipes.create.milling('6x tfcoreprocessing:kindle/coal_dust','tfc:ore/bituminous_coal')
   e.recipes.create.milling('4x tfcoreprocessing:kindle/coal_dust','tfc:ore/lignite')
+  e.remove({output:'minecraft:black_dye',input:'minecraft:charcoal'})
 
   //焦炭粉
   e.recipes.create.milling('6x tfcoreprocessing:kindle/coke_dust','immersiveengineering:coal_coke')
@@ -38,15 +39,18 @@ ServerEvents.recipes(e => {
   e.shapeless('minecraft:slime_ball',["#tfc:foods/dough","minecraft:lime_dye"])
   //粘液矿磨碎
   e.recipes.create.milling('minecraft:slime_ball','beneath:raw_slime')
+  //钾石岩和硝石粉碎
+  e.recipes.create.milling('4x tfc:powder/saltpeter','tfc:ore/saltpeter')
+  e.recipes.create.milling('4x tfc:powder/sylvite','tfc:ore/sylvite')
 
   //麦机动磨粉
-  e.recipes.create.milling(["tfc:food/barley_flour",Item.of("tfc:food/barley_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/barley_grain"}})
-  e.recipes.create.milling(["tfc:food/oat_flour",Item.of("tfc:food/oat_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/oat_grain"}})
-  e.recipes.create.milling(["tfc:food/rye_flour",Item.of("tfc:food/rye_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rye_grain"}})
-  e.recipes.create.milling(["tfc:food/wheat_flour",Item.of("tfc:food/wheat_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/wheat_grain"}})
-  e.recipes.create.milling(["tfc:food/maize_flour",Item.of("tfc:food/maize_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/maize_grain"}})
-  e.recipes.create.milling(["tfc:food/rice_flour",Item.of("tfc:food/rice_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rice_grain"}})
-  e.recipes.create.milling(["firmalife:food/masa_flour",Item.of("firmalife:food/masa_flour").withChance(0.2)],{"type": "tfc:not_rotten","ingredient": {"item": "firmalife:food/nixtamal"}})
+  e.recipes.create.milling(["tfc:food/barley_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/barley_grain"}})
+  e.recipes.create.milling(["tfc:food/oat_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/oat_grain"}})
+  e.recipes.create.milling(["tfc:food/rye_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rye_grain"}})
+  e.recipes.create.milling(["tfc:food/wheat_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/wheat_grain"}})
+  e.recipes.create.milling(["tfc:food/maize_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/maize_grain"}})
+  e.recipes.create.milling(["tfc:food/rice_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rice_grain"}})
+  e.recipes.create.milling(["firmalife:food/masa_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "firmalife:food/nixtamal"}})
 
   //砂纸
   e.shapeless('create:sand_paper',['tfc:wool_cloth','#forge:sand'])
@@ -61,6 +65,8 @@ ServerEvents.recipes(e => {
 
   //空烈焰人燃烧室
   e.recipes.tfc.anvil('create:empty_blaze_burner', 'tfc:metal/double_ingot/wrought_iron', ['hit_not_last', 'bend_any','bend_any']).tier(3)
+  //烈焰蛋糕调整
+  e.replaceInput({output:'create:blaze_cake_base'},"minecraft:egg","#forge:dough")
 
   //蓝钢罐头制造
   e.recipes.create.compacting('2x tfcr:blue_steelcan1','tfc:metal/sheet/blue_steel').superheated()
@@ -88,6 +94,7 @@ ServerEvents.recipes(e => {
      'AAA'],
     {A:"#forge:food/dried_kelp",
      B:"tfc:glue"})
+
   //替换海带为标签
   e.replaceInput({},"minecraft:dried_kelp","#forge:food/dried_kelp")
   //蒸汽机、保险库原版木桶换储物木桶
