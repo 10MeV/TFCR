@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+    "ingredients": [
+      {
+        "item": "tfcorewashing:dirty_dust_cryolite"
+      }
+    ],
+    "results": [
+      {
+        "item": "minecraft:redstone"
+      },
+      {
+        "item": "tfcorewashing:pile_white_sand"
+      }
+    ],
+    "processingTime": 1200
+}

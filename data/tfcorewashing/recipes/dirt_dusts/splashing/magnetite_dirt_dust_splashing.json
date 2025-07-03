@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+    "ingredients": [
+      {
+        "item": "tfcorewashing:dirty_dust_magnetite"
+      }
+    ],
+    "results": [
+      {
+        "item": "tfc:powder/magnetite"
+      },
+      {
+        "item": "tfcorewashing:pile_black_sand"
+      }
+    ],
+    "processingTime": 1200
+}

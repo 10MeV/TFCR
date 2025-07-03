@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+    "ingredients": [
+      {
+        "item": "tfcorewashing:dirty_dust_garnierite"
+      }
+    ],
+    "results": [
+      {
+        "item": "tfc:powder/garnierite"
+      },
+      {
+        "item": "tfcorewashing:pile_green_sand"
+      }
+    ],
+    "processingTime": 1200
+}

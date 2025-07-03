@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+    "ingredients": [
+      {
+        "item": "tfcorewashing:rocky_chunks_malachite"
+      }
+    ],
+    "results": [
+      {
+        "item": "tfcorewashing:chunks_malachite"
+      },
+      {
+        "item": "tfc:rock/loose/andesite",
+        "chance": 0.60
+      },
+      {
+        "item": "tfc:rock/loose/dolomite",
+        "chance": 0.30
+      },
+      {
+        "item": "tfc:ore/diamond",
+        "chance": 0.005
+      }
+    ],
+    "processingTime": 1200
+}

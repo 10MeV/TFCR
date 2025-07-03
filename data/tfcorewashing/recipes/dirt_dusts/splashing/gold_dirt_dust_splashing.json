@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+    "ingredients": [
+      {
+        "item": "tfcorewashing:dirty_dust_gold"
+      }
+    ],
+    "results": [
+      {
+        "item": "tfc:powder/native_gold"
+      },
+      {
+        "item": "tfcorewashing:pile_yellow_sand"
+      }
+    ],
+    "processingTime": 1200
+}

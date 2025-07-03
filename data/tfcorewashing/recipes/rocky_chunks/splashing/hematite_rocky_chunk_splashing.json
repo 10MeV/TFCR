@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+    "ingredients": [
+      {
+        "item": "tfcorewashing:rocky_chunks_hematite"
+      }
+    ],
+    "results": [
+      {
+        "item": "tfcorewashing:chunks_hematite"
+      },
+      {
+        "item": "tfc:rock/loose/andesite",
+        "chance": 0.60
+      },
+      {
+        "item": "tfc:rock/loose/dolomite",
+        "chance": 0.30
+      },
+      {
+        "item": "tfc:ore/topaz",
+        "chance": 0.005
+      }
+    ],
+    "processingTime": 1200
+}

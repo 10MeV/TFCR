@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:splashing",
+    "ingredients": [
+      {
+        "item": "tfcorewashing:dirty_dust_cinnabar"
+      }
+    ],
+    "results": [
+      {
+        "item": "minecraft:redstone"
+      },
+      {
+        "item": "tfcorewashing:pile_red_sand"
+      }
+    ],
+    "processingTime": 1200
+}
