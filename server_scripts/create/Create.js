@@ -19,7 +19,8 @@ ServerEvents.recipes(e => {
 
   //焦炭粉
   e.recipes.create.milling('6x tfcoreprocessing:kindle/coke_dust','immersiveengineering:coal_coke')
-
+  //碱液自动
+  e.recipes.create.mixing([Fluid.of('tfc:lye',500)],[Fluid.water(500),"tfc:powder/wood_ash"])
   //胶水制作
   e.recipes.create.mixing('tfc:glue',[Fluid.of('tfc:limewater',500),'minecraft:bone_meal']).heated()
   //砂浆制作
@@ -51,6 +52,9 @@ ServerEvents.recipes(e => {
   e.recipes.create.milling(["tfc:food/maize_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/maize_grain"}})
   e.recipes.create.milling(["tfc:food/rice_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/rice_grain"}})
   e.recipes.create.milling(["firmalife:food/masa_flour"],{"type": "tfc:not_rotten","ingredient": {"item": "firmalife:food/nixtamal"}})
+
+  //磨橄榄
+  e.recipes.create.milling('2x tfc:olive_paste',{"type": "tfc:not_rotten","ingredient": {"item": 'tfc:food/olive'}})
 
   //砂纸
   e.shapeless('create:sand_paper',['tfc:wool_cloth','#forge:sand'])

@@ -13,6 +13,12 @@ TFCEvents.data(event => {
     })
 })
 
+//灵魂豆芽保质期延长
+TFCEvents.data(event => {
+    event.foodItem('cold_sweat:soul_sprout', food => {
+        food.decayModifier(0.5)
+    })
+})
 
 //群峦方便食物合成
 ServerEvents.recipes(e => {
@@ -51,6 +57,9 @@ ServerEvents.recipes(e => {
     "recipe_book_tab": "misc",
     "ingredients": [{"tag": "forge:dusts/salt"},{"type": "tfc:not_rotten","ingredient": {"tag": "tfc:foods/raw_meats"}}],
     "result": {"item": "tfcr:powdered_meat","modifiers": ["tfc:copy_food"]},"experience": 0.35,"cookingtime": 100})
+
+    //移除南瓜派
+    e.remove({id:"create_central_kitchen:crafting/pumpkin_pie"})
 
 })
 //能量棒罐头开出能量棒

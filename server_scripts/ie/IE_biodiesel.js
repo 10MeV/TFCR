@@ -7,4 +7,8 @@ e.custom({"type":"immersiveengineering:refinery",
     "input0":{"amount":8,"tag":"forge:plantoil"},
     "input1":{"amount":8,"tag":"forge:ethanol"},
     "result":{"amount":16*n,"fluid":"immersiveengineering:biodiesel"}})
+    //高定向热解石墨
+    e.custom({"type":"immersiveengineering:squeezer","energy":19200,
+        "input":{"base_ingredient":{"item":"tfc:powder/charcoal"},"count":48},
+        "result":{"tag":"forge:dusts/hop_graphite"}})
 })

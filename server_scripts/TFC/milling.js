@@ -1,6 +1,5 @@
 ServerEvents.recipes(e=> {
     const create=e.recipes.create
-    create.milling('2x tfc:olive_paste','tfc:food/olive')
     create.milling('4x tfc:powder/sulfur','tfc:ore/sulfur')
     create.milling('4x tfc:powder/graphite','tfc:ore/graphite')
     create.milling('6x tfc:powder/flux','tfc:ore/borax')

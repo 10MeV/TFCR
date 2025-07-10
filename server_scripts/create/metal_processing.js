@@ -19,4 +19,14 @@ ServerEvents.recipes(e => {
         e.recipes.create.pressing('kubejs:hot_iron_bloom','kubejs:hot_iron_bloom'),
         e.recipes.createDeploying('kubejs:hot_iron_bloom', ['kubejs:hot_iron_bloom', 'tfc:metal/hammer/wrought_iron']).keepHeldItem()
        ]).transitionalItem('kubejs:hot_iron_bloom').loops(3)
+
+    //下界合金制作
+    e.custom({
+    "type": "immersiveengineering:arc_furnace",
+    "results":[{"count": 1,"base_ingredient":{"item":"minecraft:netherite_ingot"}}],
+    "additives": [{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/blue_steel"}},{"count": 16,"base_ingredient":{"item":"minecraft:nether_wart"}}],
+    "input": {"count": 1,"base_ingredient":{"item": "tfc:metal/ingot/red_steel"}},
+    "time": 200,
+    "energy": 51200
+    })
 })
