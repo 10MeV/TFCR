@@ -14,4 +14,7 @@ ServerEvents.recipes(e => {
     e.remove({id:"minecraft:cauldron"})//炼药锅
     //制作铁砧
     e.shapeless('minecraft:anvil','tfc:metal/anvil/wrought_iron')
+    //菠萝布修复
+    e.shapeless("firmalife:pineapple_fiber",[{"type": "tfc:not_rotten","ingredient": {"item": 'firmalife:food/pineapple'}},'#minecraft:axes']).damageIngredient({tag:'#minecraft:axes'},1)
+    e.remove({id:'firmalife:crafting/pineapple_fiber'})
 })

@@ -60,6 +60,16 @@ ServerEvents.recipes(e => {
 
     //移除南瓜派
     e.remove({id:"create_central_kitchen:crafting/pumpkin_pie"})
+    //切山羊肉
+    e.custom({
+    "type": "farmersdelight:cutting",
+    "ingredients": [{"type": "tfc:not_rotten","ingredient": [
+        {"item": "tfc:food/mutton"},{"item": "minecraft:mutton"},{"item":'tfc:food/chevon'}
+      ]}],
+    "tool": {"tag": "forge:tools/knives"},
+    "result": [
+    {"item": "farmersdelight:mutton_chops","count": 2,"modifiers": ["tfc:copy_food"]}]
+    })
 
 })
 //能量棒罐头开出能量棒
