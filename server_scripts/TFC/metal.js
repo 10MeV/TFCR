@@ -14,16 +14,4 @@ ServerEvents.recipes(e => {
     e.remove({id:"minecraft:cauldron"})//炼药锅
     //制作铁砧
     e.shapeless('minecraft:anvil','tfc:metal/anvil/wrought_iron')
-    //制作羊毛块
-    e.custom({
-    "__comment__": "This file was automatically created by mcresources",
-    "type": "advancedtfctech:power_loom",
-    "result": {"item": "minecraft:white_wool","count": 32},
-    "secondaries": [{"output": {"item": "advancedtfctech:pirn"}}],
-    "inputs": [{"base_ingredient": {"item": "tfc:wool_cloth"},"count": 3},{"item": "advancedtfctech:wool_winded_pirn"}],
-    "secondary_input": {"base_ingredient": {"item": "tfc:wool_yarn"},"count": 16},
-    "in_progress_texture": "advancedtfctech:block/multiblock/power_loom/wool",
-    "time": 250,
-    "energy": 20000
-})
 })

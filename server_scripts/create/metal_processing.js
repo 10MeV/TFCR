@@ -24,9 +24,9 @@ ServerEvents.recipes(e => {
     e.custom({
     "type": "immersiveengineering:arc_furnace",
     "results":[{"count": 1,"base_ingredient":{"item":"minecraft:netherite_ingot"}}],
-    "additives": [{"count": 1,"base_ingredient":{"item":"tfc:metal/ingot/blue_steel"}},{"count": 16,"base_ingredient":{"item":"minecraft:nether_wart"}}],
-    "input": {"count": 1,"base_ingredient":{"item": "tfc:metal/ingot/red_steel"}},
-    "time": 200,
-    "energy": 51200
+    "additives": [{"count": 8,"base_ingredient":{"item":"tfc:metal/ingot/blue_steel"}},{"count": 32,"base_ingredient":{"item":"minecraft:nether_wart"}}],
+    "input": {"count": 8,"base_ingredient":{"item": "tfc:metal/ingot/red_steel"}},
+    "time": 400,
+    "energy": 102400
     })
 })

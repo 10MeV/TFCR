@@ -1,5 +1,7 @@
 ServerEvents.recipes(e => {
         e.recipes.create.mixing("tfcr:roasted_kaolin_clay",["tfcr:roasted/bauxite","tfc:sand/white"]).superheated()
+        e.recipes.create.splashing([Item.of("tfc:sand/white").withChance(0.5),Item.of("minecraft:clay_ball").withChance(0.25)],'#forge:sand')
+        e.remove({id:"create:splashing/sand"})
         e.recipes.create.sequenced_assembly(
 		["tfcr:raw_kaolin_clay"],"tfcr:roasted_kaolin_clay",
        [
