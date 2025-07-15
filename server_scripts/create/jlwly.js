@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
         "AAA"
     ], {
         A: "minecraft:gold_nugget",
-        B: "tfc:food/carrot"
+        B: {"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/carrot"}}
     });
     //腐烂蜘蛛眼兼容
     e.shaped("minecraft:fermented_spider_eye", [

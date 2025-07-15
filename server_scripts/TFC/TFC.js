@@ -25,5 +25,17 @@ ServerEvents.recipes(e => {
       e.recipes.create.mixing('8x firmalife:pineapple_yarn','firmalife:pineapple_fiber')
       e.recipes.create.mixing('textile:cotton_string','3x textile:cotton_ball')
 
+      //烹饪指南
+      e.replaceInput({output:'create_central_kitchen:cooking_guide'},'minecraft:carrot',{"type": "tfc:not_rotten","ingredient": {"item": "tfc:food/carrot"}})
+
+      //自动黄铜构件
+      e.custom({"__comment__": "This file was automatically created by mcresources",
+      "type": "immersiveengineering:metal_press",
+      "mold": "immersiveengineering:mold_gear",
+      "input": {"count": 1,"base_ingredient": {"tag": "forge:ingots/brass"}},
+      "result": {"count": 2,"base_ingredient": {"item": 'tfc:brass_mechanisms'}},
+      "energy": 2400
+      })
+
 
 })
