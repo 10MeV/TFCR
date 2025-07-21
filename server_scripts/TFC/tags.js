@@ -23,5 +23,9 @@ ServerEvents.tags('item', e => {
     e.add('tfc:plants/kelp','tfc:plant/winged_kelp')
     //添加岩浆块tag
     e.add('forge:magma_block','tfc_coldsweat:rock/magma/basalt')
+    //添加afc树苗造纸标签
+    e.add('create:pulpifiable', /.*sapling.*/)
+    //添加小粉末标签
+    e.add('tfcr:dirty_pile_dust', /.*dirty_pile.*/)
 
   })
