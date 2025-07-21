@@ -2,13 +2,12 @@
 TFCEvents.data(event => {
     event.foodItem('tfcr:super_hardtack', food => {
         food.hunger(4)
-        food.protein(14.4)
-        food.decayModifier(1)
-        food.grain(1)
-        food.fruit(1)
-        food.vegetables(1)
-        food.protein(1)
-        food.dairy(1)
+        food.decayModifier(1.2)
+        food.grain(1.2)
+        food.fruit(1.2)
+        food.vegetables(1.2)
+        food.protein(1.2)
+        food.dairy(1.2)
         food.decayModifier(1.5)
     })
 })
@@ -81,8 +80,8 @@ ItemEvents.rightClicked('tfcr:blue_steelcan0', event => {
         heldItem.shrink(1); // 减少1个
         player.setMainHandItem(heldItem); // 更新玩家手中物品
     }  
-    // 给予玩家物品：1个脏罐头和8个能量棒
+    // 给予玩家物品：1个脏罐头和16个能量棒
     player.give(Item.of('tfcr:blue_steelcan2', 1));
-    player.give(Item.of('tfcr:super_hardtack', 8));
+    player.give(Item.of('tfcr:super_hardtack', 16));
 })
 

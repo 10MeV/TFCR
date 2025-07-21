@@ -37,5 +37,8 @@ ServerEvents.recipes(e => {
       "energy": 2400
       })
 
+      //合金窑砖配方
+      e.shapeless('immersiveengineering:alloybrick',['minecraft:brick','#forge:sandstone'])
+
 
 })
